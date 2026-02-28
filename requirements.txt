@@ -1,0 +1,7 @@
+torch==2.8.0+cu129
+matplotlib==3.5.0
+numpy==1.26.4
+pillow==12.1.0
+scikit-image
+opencv-python==4.6.0.66
+pytorch_msssim
