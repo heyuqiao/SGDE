@@ -317,7 +317,7 @@ def gen_meas_torch_batch(inputs, Phi, step, wave_len, mask_type="mask_3d_shift",
         data['Y'] = input
         data['H'] = H
     else:
-        meas = y / nC * 2 
+        meas = y / nC * 2
         H = shift_back_batch(meas, step=step)
         data['Y'] = y
         data['H'] = H

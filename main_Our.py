@@ -20,13 +20,13 @@ parser.add_argument('--max_angle', default=0.8, help="Range of single core calib
 parser.add_argument('--max_scale', default=0.008, help="Range of single core calibration")
 parser.add_argument('--kernel_num', default=8, help='It is for MK-LCTC')
 parser.add_argument('--add_order', default='forward', help="forward or reverse, it is for MK-LCTC")
-parser.add_argument('--switch_iters', default=1000, help="Switching from SK to MK, it is for MK-LCTC")
+parser.add_argument('--switch_iters', default=1500, help="Switching from SK to MK, it is for MK-LCTC")
 
 # The following are the original parameters of LCTC
 parser.add_argument('--unit_size', default=1, help="encoding unit size of mask")
 parser.add_argument('--iter_num', default=1, help="Maximum number of iterations")
 parser.add_argument('--lambda_', default=1, help="Facotr of the LCTC regularization")
-parser.add_argument('--LR_iter', default=3000, help="Training epochs of LCTC networks")
+parser.add_argument('--LR_iter', default=4000, help="Training epochs of LCTC networks")
 parser.add_argument('--R_iter', default=1000, help="Reduced Training epochs of CTC networks")
 parser.add_argument('--lambda_R', default=0.07, help="Factor of TV/SSTV regularization in CTC")
 parser.add_argument('--ip_BI', default=4, help="The number of channel of input")

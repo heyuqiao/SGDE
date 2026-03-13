@@ -301,6 +301,28 @@ def shift(inputs, step):
     del inputs
     return output
 
+# def shift(inputs, step):
+#     """
+#     inputs: [H, W, C]
+#     return: [H, W + (C-1)*step, C]
+#     """
+#     H, W, C = inputs.shape
+#     out_W = W + (C - 1) * step
+#     # [H, C, W]
+#     x = inputs.permute(0, 2, 1).contiguous()
+#     # 输出: [H, C, out_W]
+#     output = inputs.new_zeros((H, C, out_W))
+#     # 每个通道对应的写入位置
+#     # idx shape: [1, C, W]
+#     idx = torch.arange(W, device=inputs.device).view(1, 1, W) + \
+#           torch.arange(C, device=inputs.device).view(1, C, 1) * step
+#     # 扩展到 batch 维度 H
+#     idx = idx.expand(H, C, W)
+#     # 一次性并行写入
+#     output.scatter_(dim=2, index=idx, src=x)
+#     # 变回 [H, out_W, C]
+#     return output.permute(0, 2, 1).contiguous()
+
 
 def shift_back(inputs, step):
     [h, w, nC] = inputs.shape

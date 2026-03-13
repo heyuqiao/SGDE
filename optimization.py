@@ -194,7 +194,7 @@ def SK_LCTC(meas, Phi, z, truth_tensor, im_input, net_input_kernel, args):
             best_loss = loss.item()
             best_hs_recon = model_out.detach()
 
-        if (idx + 1) % 10 == 0:
+        if (idx + 1) % 100 == 0:
             video_gen(model_out.squeeze(0).permute(1, 2, 0).detach().cpu().numpy())
             PSNR = calculate_psnr_tensor(truth_tensor, model_out.squeeze(0))
             print('Iter {}, x_loss:{:.3f}, s_loss:{:.3f}, PSNR:{:.2f}'.format(

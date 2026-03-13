@@ -7,6 +7,8 @@ import scipy.io as sio
 from optimization import ADMM_Iter
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 random.seed(5)
+import time
+
 # -----------------------Opti. Configuration -----------------------#
 parser = argparse.ArgumentParser()
 parser.add_argument('--scene', default='scene01', help="scene01-10")
@@ -14,7 +16,7 @@ parser.add_argument('--method', default='SK-LCTC', help="LCTC, SK-LCTC or MK-LCT
 parser.add_argument('--unit_size', default=1, help="encoding unit size of mask")
 
 # The following are the parameters of Our SGDE
-parser.add_argument('--max_translation', default=1.0, help="Range of single core calibration")
+parser.add_argument('--max_translation', default=2.0, help="Range of single core calibration")
 parser.add_argument('--max_angle', default=0.4, help="Range of single core calibration")
 parser.add_argument('--max_scale', default=0.004, help="Range of single core calibration")
 parser.add_argument('--kernel_num', default=8, help='It is for MK-LCTC')
@@ -23,7 +25,7 @@ parser.add_argument('--switch_iters', default=1000, help="Switching from SK to M
 
 # The following are the affine transformation parameters for Mask,
 # with the aim of introducing controllable perturbations
-parser.add_argument('--translate_x', default=0.5, help="Affine params")
+parser.add_argument('--translate_x', default=0.0, help="Affine params")
 parser.add_argument('--translate_y', default=0, help="Affine params")
 parser.add_argument('--angle', default=0, help="Affine params")
 parser.add_argument('--scale_x', default=1.000, help="Affine params")
@@ -77,7 +79,10 @@ Phi_new = mask_3d_new.to(device)
 meas = torch.sum(Phi_new * data_truth_shift, 2)
 
 # -------------------------- Optimization --------------------------#
+start_time = time.time()
 x_rec = ADMM_Iter(meas.to(device), Phi.to(device), truth_tensor, args)
+end_time = time.time()
+print(f"runtime: {end_time - start_time:.2f} s")
 sio.savemat(results_dir + '/{}.mat'.format(data_name), {'img': x_rec.cpu().numpy()})
 if os.path.exists('./Results/model_weights.pth'):
     os.remove('./Results/model_weights.pth')
