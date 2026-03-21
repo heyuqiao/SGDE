@@ -2,7 +2,7 @@
 
 # SGDE: Self-supervised Geometry Degradation Estimation Framework for Coded Aperture Compressive Spectral Imaging
 
-Yuqiao He, Xiaoyan Liu, Jianxu Mao, Yaonan Wang, Hui Zhang, Lizhu Liu, [Yurong Chen](https://github.com/YurongChen1998), Wenbin He
+Yuqiao He, Xiaoyan Liu, Jianxu Mao, Yaonan Wang, Hui Zhang, [Lizhu Liu](https://github.com/liuli33), [Yurong Chen](https://github.com/YurongChen1998), Wenbin He
 
 </div>
 
