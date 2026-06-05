@@ -148,3 +148,12 @@ For questions, please contact:
 
 ## 📖 Citation
 If you find our code useful, please star ⭐ this repository and consider citing:
+```
+@inproceedings{he2026sgde,
+  title={SGDE: Self-supervised Geometry Degradation Estimation Framework for Coded Aperture Compressive Spectral Imaging},
+  author={He, Yuqiao and Liu, Xiaoyan and Mao, Jianxu and Wang, Yaonan and Zhang, Hui and Liu, Lizhu and Chen, Yurong and He, Wenbin},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={34084--34094},
+  year={2026}
+}
+```

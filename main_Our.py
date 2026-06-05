@@ -26,7 +26,7 @@ parser.add_argument('--switch_iters', default=1500, help="Switching from SK to M
 parser.add_argument('--unit_size', default=1, help="encoding unit size of mask")
 parser.add_argument('--iter_num', default=1, help="Maximum number of iterations")
 parser.add_argument('--lambda_', default=1, help="Facotr of the LCTC regularization")
-parser.add_argument('--LR_iter', default=4000, help="Training epochs of LCTC networks")
+parser.add_argument('--LR_iter', default=3000, help="Training epochs of LCTC networks")
 parser.add_argument('--R_iter', default=1000, help="Reduced Training epochs of CTC networks")
 parser.add_argument('--lambda_R', default=0.07, help="Factor of TV/SSTV regularization in CTC")
 parser.add_argument('--ip_BI', default=4, help="The number of channel of input")

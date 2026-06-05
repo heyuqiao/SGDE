@@ -21,12 +21,12 @@ parser.add_argument('--max_angle', default=0.4, help="Range of single core calib
 parser.add_argument('--max_scale', default=0.004, help="Range of single core calibration")
 parser.add_argument('--kernel_num', default=8, help='It is for MK-LCTC')
 parser.add_argument('--add_order', default='forward', help="forward or reverse, it is for MK-LCTC")
-parser.add_argument('--switch_iters', default=1000, help="Switching from SK to MK, it is for MK-LCTC")
+parser.add_argument('--switch_iters', default=500, help="Switching from SK to MK, it is for MK-LCTC")
 
 # The following are the affine transformation parameters for Mask,
 # with the aim of introducing controllable perturbations
-parser.add_argument('--translate_x', default=0.0, help="Affine params")
-parser.add_argument('--translate_y', default=0, help="Affine params")
+parser.add_argument('--translate_x', default=0.5, help="Affine params")
+parser.add_argument('--translate_y', default=0.0, help="Affine params")
 parser.add_argument('--angle', default=0, help="Affine params")
 parser.add_argument('--scale_x', default=1.000, help="Affine params")
 parser.add_argument('--scale_y', default=1.000, help="Affine params")

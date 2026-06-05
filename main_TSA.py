@@ -10,10 +10,10 @@ random.seed(5)
 
 # -----------------------Opti. Configuration -----------------------#
 parser = argparse.ArgumentParser()
-parser.add_argument('--meas_path', default='./Data/TSA/meas/scene01.mat')
+parser.add_argument('--meas_path', default='./Data/TSA/meas/scene02.mat')
 parser.add_argument('--mask_path', default='./Data/TSA/mask/mask.mat')
 parser.add_argument('--results_dir', default='./Results/')
-parser.add_argument('--method', default='SK-TC', help="LCTC, SK-LCTC or MK-LCTC")
+parser.add_argument('--method', default='SK-LCTC', help="LCTC, SK-LCTC or MK-LCTC")
 parser.add_argument('--unit_size', default=1, help="encoding unit size of mask")
 
 # The following are the parameters of Our SGDE
@@ -27,7 +27,7 @@ parser.add_argument('--switch_iters', default=1500, help="Switching from SK to M
 # The following are the original parameters of LCTC
 parser.add_argument('--iter_num', default=1, help="Maximum number of iterations")
 parser.add_argument('--lambda_', default=1, help="Facotr of the LCTC regularization")
-parser.add_argument('--LR_iter', default=4000, help="Training epochs of CTC networks")
+parser.add_argument('--LR_iter', default=3000, help="Training epochs of CTC networks")
 parser.add_argument('--R_iter', default=1000, help="Reduced Training epochs of CTC networks")
 parser.add_argument('--lambda_R', default=0.07, help="Factor of TV/SSTV regularization in CTC")
 parser.add_argument('--ip_BI', default=4, help="The number of channel of input")
